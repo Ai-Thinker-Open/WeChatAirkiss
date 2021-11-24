@@ -1,3 +1,19 @@
+
+<div align="center"> <span class="logo" > WeChatAirkiss </span> </div>
+
+<div class="row" />
+<div align="center">
+  <span class="desc" >微信小程序实现一键配网</span> 
+</div>
+
+
+## 维护日志，版本修订；
+
+|修改时间|更新日志|
+|----|----|
+|2021.11.24|首次发布|
+
+
 ## 一、关于 WeChatAirkiss
 
 本开源工程由半颗心脏基于微信配网airkiss协议做的一个开源微信配网小程序，适合于安信可在售的众多款Wi-Fi模组，包括 ESP32C3\ESP8266\ESP32\ESP32S2系列的模组。
@@ -32,7 +48,12 @@ AirKiss是微信硬件平台为Wi-Fi设备提供的微信配网、局域网发�
 
 然后，会有提示是否添加插件，按照下面提示添加插件使用。
 
-![](_static/setup.png)
+
+<p align="center">
+  <img src="_static/setup.png" alt="Banner"  height="650" width="560"  />
+</p>
+
+
 
 下面举例说明了如何使用，更多使用技巧和方法参考本小程序。
 

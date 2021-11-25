@@ -1,10 +1,25 @@
+<p align="center">
+  <img src="_static/gh_860fe35e8c08_344.jpg" width="300px" height="300px" alt="Banner" />
+</p>
 
-<div align="center"> <span class="logo" > WeChatAirkiss </span> </div>
 
-<div class="row" />
 <div align="center">
-  <span class="desc" >微信小程序实现一键配网</span> 
+    <span>AiThinkerAirkissforWXMini, just an wechat component library!</span><br/>
+    <strong>一个实现airkiss一键配的微信小程序</strong>
 </div>
+
+<div align="center">
+    <a href="https://www.ai-thinker.com">
+        <img alt="安信可" src="https://img.shields.io/badge/%E5%AE%89%E4%BF%A1%E5%8F%AF-WiFi%E6%A8%A1%E7%BB%84-blue" />
+    </a>
+    <a href="https://www.ai-thinker.com">
+        <img alt="微信配网" src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1%E9%85%8D%E7%BD%91-airkiss-orange" />
+    </a>
+    <a>
+        <img alt="基础库版本" src="https://img.shields.io/badge/%E5%9F%BA%E7%A1%80%E5%BA%93%E7%89%88%E6%9C%AC-%3E%3D2.11.1-brightgreen" />
+    </a>
+</div>
+
 
 
 ## 维护日志，版本修订；

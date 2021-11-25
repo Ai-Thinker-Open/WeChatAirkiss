@@ -5,7 +5,7 @@
 
 <div align="center">
     <span>AiThinkerAirkissforWXMini, just an wechat component library!</span><br/>
-    <strong>一个实现airkiss一键配的微信小程序</strong>
+    <strong>可实现airkiss一键配网的微信小程序</strong>
 </div>
 
 <br>

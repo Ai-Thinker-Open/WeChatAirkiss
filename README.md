@@ -8,6 +8,8 @@
     <strong>一个实现airkiss一键配的微信小程序</strong>
 </div>
 
+<br>
+
 <div align="center">
     <a href="https://www.ai-thinker.com">
         <img alt="安信可" src="https://img.shields.io/badge/%E5%AE%89%E4%BF%A1%E5%8F%AF-WiFi%E6%A8%A1%E7%BB%84-blue" />

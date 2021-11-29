@@ -96,7 +96,7 @@ Page({
     onConfirm() {
         console.log("ssid:", this.data.ssid, ",password:", this.data.password)
 
-        if (this.data.ssid.length < 8) {
+        if (this.data.ssid == '') {
             wx.showToast({
                 title: '请连接路由器',
                 duration: 2000,

@@ -126,7 +126,7 @@ Page({
             title: '配网中',
         })
         //这里最好加微信小程序判断账号密码是否为空，以及其长度和是否为5G频段
-        airkiss.startConfig(this.data.ssid, this.data.password, function (res) {
+        airkiss.startAirkiss(this.data.ssid, this.data.password, function (res) {
             wx.hideLoading();
             switch (res.code) {
                 case 0:

@@ -48,6 +48,6 @@
 </view>
 
 <view class="weui-footer">
-	<view class="weui-footer__text">版本 {{version}}</view>
+	<view class="weui-footer__text">库版本 {{version}}-{{hal_version}}</view>
 	<view class="weui-footer__text">Copyright 半颗心脏 CSDN</view>
 </view>

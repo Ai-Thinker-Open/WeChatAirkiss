@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -31,7 +31,7 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "useIsolateContext": true,
+    "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
@@ -43,7 +43,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.20.2",
-  "appid": "wx05c6f616bb762850",
+  "appid": "wx940e37bc0f471016",
   "projectname": "WeChatAirkiss",
   "debugOptions": {
     "hidedInDevtools": []

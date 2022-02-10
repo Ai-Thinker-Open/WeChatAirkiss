@@ -1,5 +1,10 @@
 const airkiss = requirePlugin('airkiss');
 
+
+/*********** hal_version 版本迭代 ***********/
+//  211209 ：纠正输入的SSID判断长度问题
+/*************************************/
+
 Page({
     data: {
         ssid: '',
@@ -7,11 +12,12 @@ Page({
         is5G: true,
         showClearBtn: false,
         isWaring: false,
+        hal_version: 211209,
         ui: {
             background: [
-                {url: 'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/ESP32-C3.png' }, 
-                {url: 'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/banner32.jpg'},
-                {url:  'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/banner32.jpg'},
+                { url: 'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/ESP32-C3.png' },
+                { url: 'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/banner32.jpg' },
+                { url: 'https://aithinker-static.oss-cn-shenzhen.aliyuncs.com/officialwebsite/banner/banner32.jpg' },
             ],
             indicatorDots: true,
             vertical: false,

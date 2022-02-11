@@ -1,0 +1,141 @@
+.connect_box {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 32rpx;
+  color: #666;
+  font-family: "Microsoft YaHei";
+}
+.connect_device_name{
+  float: left;
+  padding-left: 10px;
+  color: #39beff;
+}
+
+.connect_state {
+  float: right;
+  padding-right: 10px;
+  text-decoration: underline;
+  color: #39beff;
+}
+
+.send_text {
+  height: 100px;
+  width: 90%;
+  border: 2px solid #39beff;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.send_btn_box {
+  width: 92%;
+  margin: auto;
+  font-size: 32rpx;
+  color: #333;
+  font-family: "Microsoft YaHei";
+  height: 35px;
+  line-height: 35px;
+}
+
+.send_bytes {
+  display: inline-block;
+}
+
+.send_bytes_val {
+  display: inline-block;
+  margin-left: 10px;
+  color: #39beff;
+}
+
+.send_btn {
+  background-color: #eee;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  float: right;
+}
+.send_btn:active{
+  background-color: #d4d4d4;
+}
+
+.send_clean_btn {
+  background-color: #eee;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  float: right;
+  margin-right: 7px;
+}
+.send_clean_btn:active{
+  background-color: #d4d4d4;
+}
+
+.send_ascii {
+  float: right;
+  margin-right: 10px;
+  color: #39beff;
+}
+
+.send_hex {
+  float: right;
+  margin-right: 18px;
+  color: #39beff;
+  font-size: 36rpx;
+}
+
+.recv_box {
+  margin-top: 15px;
+}
+
+.revc_text {
+  width: 90%;
+  height: 550rpx;
+  border: 2px solid grey;
+  margin: 0 auto 10px;
+  padding: 5px;
+  font-size: 25rpx;
+}
+
+.recv_btn_box {
+  width: 92%;
+  margin: auto;
+  font-size: 25rpx;
+  color: grey;
+  font-family: "Microsoft YaHei";
+  height: 35px;
+  line-height: 35px;
+}
+
+.recv_bytes {
+  display: inline-block;
+}
+
+.recv_bytes_val {
+  display: inline-block;
+  margin-left: 10px;
+  color: grey;
+}
+
+.recv_clean_btn {
+  background-color: #eee;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  float: right;
+}
+.recv_clean_btn:active{
+  background-color: #d4d4d4;
+}
+
+.recv_hex {
+  float: right;
+  margin-right: 18px;
+  color: #39beff;
+  font-size: 36rpx;
+}
+
+.speed_value {
+  float: right;
+  margin-right: 40rpx;
+  color: #39beff;
+}

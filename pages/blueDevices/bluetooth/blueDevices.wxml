@@ -1,0 +1,11 @@
+<view class="container">
+  <view data-value="{{item.deviceId}}" id="{{item.deviceId}}" bindtap="Connect" wx:for="{{devicesList}}" class="item" wx:key="*this">
+    <view class="item-img">
+    <text class="iconfont icon-deng"></text>
+    </view>
+    <view class="item-name">
+      <text class="text-name">{{item.name}}</text>
+      <text class="text-rssi">Rssi: {{item.RSSI}}</text>
+    </view>
+  </view>
+</view>

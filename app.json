@@ -1,13 +1,16 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/airkiss/index",
+    "pages/blueDevices/bluetooth/blueDevices",
+    "pages/blueDevices/bluetoothChat/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小程序airkiss配网",
-    "navigationBarTextStyle":"black"
-  }, 
+    "navigationBarTitleText": "物联网常用开发工具",
+    "navigationBarTextStyle": "black"
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "plugins": {

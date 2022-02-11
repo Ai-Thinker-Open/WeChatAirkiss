@@ -1,0 +1,53 @@
+<!-- <swiper indicator-dots="{{ui.indicatorDots}}" autoplay="{{ui.autoplay}}" interval="{{ui.interval}}" duration="{{ui.duration}}">
+	<block wx:for="{{ui.background}}" wx:key="*this">
+		<swiper-item>
+			<image src="{{item.url}}" class="slide-image" />
+		</swiper-item>
+	</block>
+</swiper> -->
+
+<view class="weui-form__text-area" style="padding:0">
+	<image src="https://img.alicdn.com/tfs/TB1nzXJXmf2gK0jSZFPXXXsopXa-774-774.png" style="width: 200px;height: 200px;margin-top: 0px"></image>
+
+
+	<view class="weui-form__desc" style="font-size:25rpx;margin-top: 0px">1）先连接到家庭路由器2.4G频段网络。 </view>
+	<view class="weui-form__desc" style="font-size:25rpx;margin-top: 5px">2）使用安信可Wi-Fi模组开启微信配网。</view>
+	<view class="weui-form__desc" style="font-size:25rpx;margin-top: 5px">3）再输入家庭路由器密码,点击确定。</view>
+</view>
+
+<view class="weui-form__control-area">
+	<view class="weui-cells__group weui-cells__group_form">
+		<view class="weui-cells__title">家庭路由器信息</view>
+		<view class="weui-cells weui-cells_form">
+			<view class="weui-cell weui-cell_active weui-cell_disabled">
+				<view class="weui-cell__hd">
+					<label class="weui-label">SSID</label>
+				</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input" placeholder="请先连接到家庭网络" value="{{ssid}}" bindinput="onInputSSID" />
+				</view>
+			</view>
+		</view>
+
+		<view class="weui-cells">
+			<view class="weui-cell weui-cell_active">
+				<view class="weui-cell__hd"><label class="weui-label">密码</label></view>
+				<view class="weui-cell__bd weui-flex">
+					<input class="weui-input" type="text" placeholder="请输入家庭路由器密码" placeholder-class="weui-input__placeholder" value="{{password}}" bindinput="onInputPassword" />
+					<view wx:if="{{showClearBtn}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear" bindtap="onClear">
+						<i class="weui-icon-clear"></i>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>
+<view class="weui-form__opr-area">
+	<a class="weui-btn weui-btn_primary" bindtap="onConfirm">确定</a>
+</view>
+
+<view class="weui-footer">
+	<view class="weui-footer__text">库版本 {{version}}-{{hal_version}}</view>
+	<view class="weui-footer__text">Copyright 半颗心脏 CSDN</view>
+</view>

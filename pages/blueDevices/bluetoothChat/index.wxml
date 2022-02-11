@@ -1,0 +1,29 @@
+<view class="connect_box">
+    <text class='connect_device_name'>连接设备名：{{name}}</text>
+    <text wx:if="{{connected}}" class="connect_state" catchtap="DisConnectTap">已连接</text>
+    <text wx:else class="connect_state">未连接</text>
+</view>
+
+<view class="detail_box">
+    <!-- 输入部分 -->
+    <view class="send_box">
+        <textarea class="send_text" maxlength="-1" bindinput="SendValue" value="{{inputText}}" />
+        
+        <view class="send_btn_box">
+            <text class="send_bytes" catchtap='CleanNumberSend'>已发送的数据</text>
+            <text id='send_button' class="send_btn" bindtap="SendTap">发送</text>
+            <text class="send_clean_btn" bindtap="SendCleanTap">清空</text>
+        </view>
+    </view>
+
+    <!-- 接受部分 -->
+    <view class="recv_box">
+        <textarea class="revc_text" maxlength="-1" disabled value="{{receiveText}}" />
+        <view class="recv_btn_box">
+            <text class="recv_bytes" catchtap='CleanNumberRecv'>接收到的数据</text>
+            <text class="recv_clean_btn" bindtap="RecvCleanTap">清空</text>
+            <!--  <text class="speed_value">0 B/s</text> -->
+        </view>
+    </view>
+
+</view>

@@ -5,13 +5,28 @@
     "pages/blueDevices/bluetooth/blueDevices",
     "pages/blueDevices/bluetoothChat/index"
   ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/mqttDash/index"
+      ],
+      "independent ": false
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/blufi/index"
+      ],
+      "independent ": false
+    }
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "物联网常用开发工具",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "airkiss": {

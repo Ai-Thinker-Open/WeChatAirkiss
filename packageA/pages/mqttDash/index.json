@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "ctl-panel": "../../../components/ctl-panel/ctl-panel",
+        "label-tag": "../../../components/label-tag/label-tag",
+        "color-picker": "../../../components/color-picker/color-picker",
+        "van-notify": "@vant/weapp/notify/index",
+        "van-loading": "@vant/weapp/loading/index",
+        "van-overlay": "@vant/weapp/overlay/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-transition": "@vant/weapp/transition/index"
+    },
+    "navigationBarTitleText": "安信可蓝牙展厅",
+    "enablePullDownRefresh": false,
+    "disableScroll": true
+}

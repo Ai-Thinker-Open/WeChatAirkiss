@@ -1,0 +1,89 @@
+/* pages/mqttDash.wxss */
+
+.blufi-page-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blufi-step-wrapper {
+    padding: 0rpx 40rpx;
+}
+
+.blufi-filter-wrapper {
+    z-index: 0;
+}
+
+.blufi-note-content {
+    text-align: center;
+    color: #6b6b6b;
+    font-size: 38rpx;
+    font-weight: bold;
+    margin-top: 100rpx;
+}
+
+.blufi-list-wrapper {
+    flex: 1;
+    margin: 25rpx;
+    background-color: #f7f8fa;
+    overflow-y: scroll;
+}
+
+.blufi-list-item {
+    margin: 15rpx 15rpx 0rpx 15rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.blufi-wifi-input-wrapper{
+  flex: 1;
+  margin: 25rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.blufi-wifi-input-cover{
+  height: 400rpx;
+  width: 400rpx;
+}
+
+.blufi-btn-wrapper {
+    /* width: 100%; */
+    padding: 30rpx 40rpx;
+}
+
+.blufi-success-wrapper {
+    height: 600rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 60rpx;
+    text-align: center;
+    color: #07c160;
+}
+
+
+.loading-container {
+    z-index: 3;
+}
+
+.loading-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+}
+
+.loading-info {
+    color: white;
+    margin-top:30rpx;
+}
+

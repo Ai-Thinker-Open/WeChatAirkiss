@@ -1,0 +1,52 @@
+<wxs module="m1">
+  function match(arr, arg) {
+    var str1 = arr.toLowerCase();
+    var str2 = arg.toLowerCase();
+    return (str1.indexOf(str2) != -1);
+  }
+  module.exports.match = match;
+</wxs>
+
+<view class="blufi-page-container">
+  <view class="blufi-step-wrapper">
+    <van-steps steps="{{ steps }}" active="{{ stepActive }}" />
+  </view>
+  <block wx:if="{{stepActive == 0}}">
+    <view class="blufi-filter-wrapper">
+      <van-search value="{{ value }}" placeholder="mac/名称过滤" bind:change="filterChange" />
+    </view>
+    <view class="blufi-list-wrapper">
+      <block wx:for="{{devicesList}}" wx:key="deviceId">
+        <view wx:if="{{(m1.match(item.deviceId, macFilter) || m1.match(item.name, macFilter))&& item.name.length > 0}}" class="blufi-list-item" id="{{item.deviceId}}" bindtap="blufiConnect">
+          <van-transition name="fade">
+            <van-cell title="设备名称: {{item.name}}" value="RSSI: {{item.RSSI}}" label="设备ID: {{item.deviceId}}" border="{{ false }}" />
+          </van-transition>
+        </view>
+      </block>
+      <view class="blufi-note-content" wx:if="{{devicesList.length == 0}}">
+        扫描前, 请确保蓝牙和位置权限已打开
+      </view>
+    </view>
+  </block>
+
+  <view class="blufi-wifi-input-wrapper" wx:if="{{stepActive == 1}}">
+    <van-transition name="fade">
+      <image class="blufi-wifi-input-cover" src="https://img.alicdn.com/tfs/TB1nzXJXmf2gK0jSZFPXXXsopXa-774-774.png"></image>
+    </van-transition>
+    <van-transition name="fade">
+      <van-cell-group>
+        <van-field value="{{ ssid }}" required clearable label="SSID" placeholder="请输入WiFi名" bind:change="ssidChange" />
+        <van-field value="{{ password }}" type="text" password="{{!showPassword}}" label="密码" placeholder="请输入密码" required border="{{ false }}" icon="{{ showPassword?'eye':'closed-eye'}}" bind:click-icon="onClickeye" bind:change="passwordChange" />
+      </van-cell-group>
+    </van-transition>
+  </view>
+  <van-transition show="{{stepActive == 2}}" name="fade">
+    <view class="blufi-success-wrapper">
+      配网成功
+      <van-icon size="240rpx" name="checked" />
+    </view>
+  </van-transition>
+  <view class="blufi-btn-wrapper">
+    <van-button bindtap="blufiBtnHandle" round type="primary" loading="{{blufiLoadStatus}}" loading-text="{{blufiloadInfo}}" size="large">{{blufiloadInfo}}</van-button>
+  </view>
+</view>

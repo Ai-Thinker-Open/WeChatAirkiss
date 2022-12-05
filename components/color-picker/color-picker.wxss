@@ -1,0 +1,12 @@
+/* components/color-picker/color-picker.wxss */
+.color-picker-view {
+ background-color: #fff;
+ display: flex;
+ justify-content: center;
+ position: relative;
+}
+
+.color-picker-slider {
+ position: absolute;
+ background-color: #fff;
+}

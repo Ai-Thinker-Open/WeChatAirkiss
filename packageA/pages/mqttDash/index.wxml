@@ -1,0 +1,69 @@
+<view class="dashboard-container">
+  <van-notify id="van-notify" />
+  <van-overlay show="{{ !mqttStatus }}">
+    <view class="loading-wrapper">
+      <van-loading  color="#1989fa" size="50px" text-size="15px"></van-loading>
+      <p class="loading-info">加载中...</p>
+    </view>
+  </van-overlay>
+<view class="banner-container">
+   <swiper class="swiper-container" indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular current="{{tabSelected}}">
+      <swiper-item><image src="../../../_static/smarthome.png" mode="widthFix"></image></swiper-item>
+      <swiper-item><image src="../../../_static/tb_02.png" mode="widthFix"></image></swiper-item>
+      <swiper-item><image src="../../../_static/pb_03f.png" mode="widthFix"></image></swiper-item>
+      <swiper-item><image src="../../../_static/tb_03f.png" mode="widthFix"></image></swiper-item>
+      <swiper-item><image src="../../../_static/pb_02.png" mode="widthFix"></image></swiper-item>
+   </swiper>
+</view>
+
+  <ctl-panel class="panel-container {{ctlPanelShow?'active':''}}" config="{{ctlPanelInfo}}" 
+  bind:closePanelEvent="closePanelHandler" bind:onoffEvent="onoffHandler" bind:sliderEvent="brightnessHandler" bind:rgbEvent="rgbHandler" catchtap="closePanelHandler"/>
+
+  <van-tabs active="{{ tabSelected }}" class="tab-container" bind:change="tabChangeHandler">
+      <van-tab class="tab-body" title="群控">
+        <van-transition show="{{tabSelected == 0}}" name="fade" >
+          <view class="switch-group-container">
+              <view wx:key="id" wx:for="{{devices}}">
+                  <label-tag  wx:if="{{item.group == 0}}" config="{{item}}" data-item="{{item}}" catchtap="selectHandler"/>
+              </view>
+          </view>
+        </van-transition>
+      </van-tab>
+      <van-tab class="tab-body" title="TB-03F">
+        <van-transition show="{{tabSelected == 1}}" name="fade" >
+          <view class="switch-group-container">
+              <view wx:key="id" wx:for="{{devices}}">
+                  <label-tag wx:if="{{item.group == 1}}" config="{{item}}" data-item="{{item}}" catchtap="selectHandler"/>
+              </view>
+          </view>
+        </van-transition>
+      </van-tab>
+      <van-tab class="tab-body" title="PB-03F">
+        <van-transition show="{{tabSelected == 2}}" name="fade" >
+          <view class="switch-group-container">
+              <view wx:key="id" wx:for="{{devices}}">
+                  <label-tag wx:if="{{item.group == 2}}" config="{{item}}" data-item="{{item}}" catchtap="selectHandler"/>
+              </view>
+          </view>
+        </van-transition>
+      </van-tab>
+      <van-tab  class="tab-body" title="PB-02">
+        <van-transition show="{{tabSelected == 3}}" name="fade" >
+          <view class="switch-group-container">
+              <view wx:key="id" wx:for="{{devices}}">
+                  <label-tag wx:if="{{item.group == 3}}" config="{{item}}" data-item="{{item}}" catchtap="selectHandler"/>
+              </view>
+          </view>
+        </van-transition>
+      </van-tab>
+      <van-tab  class="tab-body" title="TB-02">
+        <van-transition show="{{tabSelected == 4}}" name="fade" >
+          <view class="switch-group-container">
+              <view wx:key="id" wx:for="{{devices}}">
+                  <label-tag wx:if="{{item.group == 4}}" config="{{item}}" data-item="{{item}}" catchtap="selectHandler"/>
+              </view>
+          </view>
+        </van-transition>
+      </van-tab>
+  </van-tabs>
+</view>

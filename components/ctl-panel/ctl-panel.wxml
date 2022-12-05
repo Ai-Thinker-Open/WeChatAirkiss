@@ -1,0 +1,41 @@
+<!-- 组件 custom-component.wxml -->
+<custom-component>
+  <view catchtap="catchTapEvent">
+    <view class="color-picker-wrapper">
+      <h2 class="ctl-device-title">{{config.id}}</h2>
+      <view class="ctl-device-info" wx:if="{{config.temp != '....°C'}}">
+        <view class="ctl-device-info-item">
+          <text class="iconfont icon-kongqiwendu">
+            {{config.temp}}
+          </text>
+        </view>
+        <view class="ctl-device-info-item">
+          <text class="iconfont icon-turangshidu">
+            {{config.hum}}
+          </text>
+        </view>
+        <view class="ctl-device-info-item">
+          <text class="iconfont icon-rentijiance">
+            {{config.body}}
+          </text>
+        </view>
+      </view>
+      <view class="ctl-device-info" wx:if="{{config.id == 'C005'}}">
+        <view class="ctl-device-info-item">
+          <text class="iconfont icon-taideng light-ball {{config.status?'active':''}}" ></text>
+        </view>
+      </view>
+      <color-picker wx:if="{{config.id != 'C005'}}" id="{{config.id}}" rgbhex="{{config.rgbhex}}" bind:colorPickerEvent="colorChange"></color-picker>
+      <switch class="switch-wrapper" checked="{{config.status}}" bindchange="switchChange" />
+      <view class="button-wrapper" wx:if="{{config.id != 'C005'}}">
+          <van-button class="button-item" data-item="#FF0000" color="#FF0000" bindtap="btnColorChange"></van-button>
+          <van-button class="button-item" data-item="#00FF00" color="#00FF00" bindtap="btnColorChange"></van-button>
+          <van-button class="button-item" data-item="#0000FF" color="#0000FF" bindtap="btnColorChange"></van-button>
+          <van-button class="button-item" data-item="#fff300" color="#fff300" bindtap="btnColorChange"></van-button>
+          <van-button class="button-item" data-item="#00ffee" color="#00ffee" bindtap="btnColorChange"></van-button>
+      </view>
+      <slider wx:if="{{config.id != 'C005'}}" class="slider-wrapper" value="{{sliderStatus}}" min="0" max="255" show-value bindchange="sliderChange" />
+      <button class="button-close" type="primary" plain="true" catchtap="closeColorPicker">退出</button>
+    </view>
+  </view>
+</custom-component>

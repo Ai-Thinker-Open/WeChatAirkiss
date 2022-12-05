@@ -1,0 +1,92 @@
+/* components/switchBtn/switchBtn.wxss */
+@import '/_static/fonts/font.wxss'
+
+.color-picker-wrapper {
+  display: flex;
+  background-color: white;
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px 0 #cccccc;
+  padding: 30rpx;
+}
+
+.ctl-device-title {
+  font-size: 50rpx;
+  margin-bottom: 30rpx;
+}
+
+.ctl-device-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 30rpx 0rpx;
+}
+
+.ctl-device-info-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.switch-wrapper {
+  margin: 35rpx 0rpx;
+  /* transform: scale(1.2); */
+  z-index: 3;
+}
+
+.slider-wrapper {
+  width:80%;
+}
+
+.button-wrapper {
+  width:100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50rpx 0rpx;
+}
+
+.button-item {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.button-close {
+  margin-top: 40rpx;
+}
+
+.color-picker-preview {
+  margin-top:10rpx;
+  width:200rpx;
+  text-align: center;
+  color: #662323;
+  border-radius: 30rpx;
+}
+
+.icon-turangshidu {
+  font-size: 50rpx;
+  color: #000000;
+}
+
+.icon-kongqiwendu{
+  font-size: 50rpx;
+  color: #000000;
+}
+
+.icon-rentijiance{
+  font-size: 50rpx;
+  color: #000000;
+}
+
+.light-ball {
+  font-size: 80rpx;
+}
+
+.light-ball.active {
+  color: #15c409;
+}

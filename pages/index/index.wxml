@@ -1,21 +1,29 @@
 <!--index.wxml-->
-<view class="container">
-  <view class='header-wrapper flex flex-jcc flex-ac'>
-    <image class="header-image" src="../../_static/AI-Thinker.png"></image>
+<view class="home-page-container">
+  <view class="home-banner-wrapper">
+    <image class="home-banner-item" src="../../_static/AI-Thinker.png" mode="aspectFit"></image>
   </view>
-  <view class='content-wrapper'>
-    <view class="title">安信可开源团队</view>
-    <view class="btn-info">
-      <view bindtap="bindViewAirKiss" class="select-way flex-1 flex flex-v flex-jcc flex-ac">
-        <text class="btn-icon iconfont icon-peiwang"></text>
+  <view class="home-title-wrapper">
+      <view>安信可开源团队</view>
+  </view>
+  <view class='home-content-wrapper'>
+    <view class="home-btn-group">
+      <view bindtap="bindViewAirKiss" class="home-btn-item">
+        <text class="home-btn-icon iconfont icon-luyouqi"></text>
         <text class="name">AirKiss配网</text>
       </view>
-      <view bindtap="bindViewBlueTooth" class="select-way flex-1 flex flex-v flex-jcc flex-ac">
-        <text class="btn-icon iconfont icon-kongzhi"></text>
-        <text class="name">蓝牙本地控制</text>
+      <view bindtap="bindViewBlufi" class="home-btn-item">
+        <text class="home-btn-icon iconfont icon-luyouqi"></text>
+        <text class="name">Blufi配网</text>
+      </view>
+      <view bindtap="bindViewBlueTooth" class="home-btn-item">
+        <text class="home-btn-icon iconfont icon-lanya"></text>
+        <text class="name">蓝牙透传</text>
+      </view>
+      <view bindtap="bindViewMqttDash" class="home-btn-item">
+        <text class="home-btn-icon iconfont icon-taideng"></text>
+        <text class="name">BLE MESH</text>
       </view>
     </view>
   </view>
 </view>
-
-

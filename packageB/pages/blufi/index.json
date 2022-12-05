@@ -1,0 +1,18 @@
+{
+    "usingComponents": {
+        "van-notify": "@vant/weapp/notify/index",
+        "van-loading": "@vant/weapp/loading/index",
+        "van-overlay": "@vant/weapp/overlay/index",
+        "van-steps": "@vant/weapp/steps/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-transition": "@vant/weapp/transition/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-search": "@vant/weapp/search/index",
+        "van-icon": "@vant/weapp/icon/index"
+    },
+    "navigationBarTitleText": "Blufi配网",
+    "enablePullDownRefresh": false,
+    "disableScroll": true
+}

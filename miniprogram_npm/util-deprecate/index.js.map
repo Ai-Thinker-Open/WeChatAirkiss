@@ -1,0 +1,1 @@
+{"version":3,"sources":["node.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["\n/**\n * For Node.js, simply re-export the core `util.deprecate` function.\n */\n\nmodule.exports = require('util').deprecate;\n"]}

@@ -1,0 +1,10 @@
+<!-- 组件 custom-component.wxml -->
+<custom-component>
+	<view class="label-container {{status?'active':''}}">
+		<view class="label-info">
+           <van-tag plain>{{config.id}}</van-tag>
+            <text class="iconfont {{config.icon}}"></text>
+            <text class="label-info-font">{{config.name}}</text>
+		</view>
+	</view>
+</custom-component>

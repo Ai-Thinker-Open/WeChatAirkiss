@@ -1,0 +1,74 @@
+/* components/switchBtn/switchBtn.wxss */
+@import '/_static/fonts/font.wxss'
+
+.label-container {
+    display: flex;
+    justify-content: center;
+    width: 210rpx;
+    height: 210rpx;
+    border-radius: 30px;
+    padding: 20rpx 20rpx;
+    margin: 10rpx;
+    background-color: #ffffff;
+    transition: all .2s ease;
+    box-shadow: 0 0 13px 0px #d6d6d6;
+    transition: all .25s ease;
+}
+
+.label-container.active {
+  box-shadow: 0 0 13px 0px #2d5cf7;
+}
+.icon-turangshidu {
+  font-size: 90rpx;
+  color: #000000;
+}
+
+.icon-kongqiwendu{
+  font-size: 90rpx;
+  color: #000000;
+}
+
+.icon-rentijiance{
+  font-size: 90rpx;
+  color: #000000;
+}
+
+.icon-taideng{
+  font-size: 90rpx;
+  color: #000000;
+}
+
+.icon-turangshidu.active{
+    color: #2d5cf7;
+}
+
+.label-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center
+}
+.label-info-font {
+  font-size: 30rpx;
+}
+.label-device-icon {
+    height: 120rpx;
+    background-size: contain;
+    width: 120rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.label-device-name {
+    color: white;
+    text-align: center;
+}
+
+.label-device-name.active {
+    color: #2d5cf7;
+}
+
+.label-container.active {
+    background-color: white;
+}
+
+

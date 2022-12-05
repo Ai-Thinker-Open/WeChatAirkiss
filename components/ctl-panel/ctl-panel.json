@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "color-picker": "../color-picker/color-picker",
+    "label-tag": "../label-tag/label-tag",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

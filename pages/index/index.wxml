@@ -16,6 +16,10 @@
         <text class="home-btn-icon iconfont icon-luyouqi"></text>
         <text class="name">Blufi配网</text>
       </view>
+      <view bindtap="bindViewPbOTA" class="home-btn-item">
+        <text class="home-btn-icon iconfont icon-luyouqi"></text>
+        <text class="name">PB OTA</text>
+      </view>
       <view bindtap="bindViewBlueTooth" class="home-btn-item">
         <text class="home-btn-icon iconfont icon-lanya"></text>
         <text class="name">蓝牙透传</text>

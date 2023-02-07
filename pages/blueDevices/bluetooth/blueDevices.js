@@ -189,5 +189,8 @@ Page({
         }
       })
     }
+  },
+  onShareAppMessage: function() {
+    /// ignore
   }
 })

@@ -19,6 +19,14 @@
         "pages/blufi/index"
       ],
       "independent ": false
+    },
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/index/index",
+        "pages/otaupgrade/otaupgrade"
+      ],
+      "independent ": false
     }
   ],
   "window": {
@@ -32,6 +40,10 @@
     "airkiss": {
       "version": "1.1.2",
       "provider": "wx610ea582556c983e"
+    },
+    "hello-plugin": {
+      "version": "1.0.5",
+      "provider": "wx22e260015dcfdb46"
     }
   }
 }

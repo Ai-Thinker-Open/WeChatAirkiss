@@ -4,7 +4,7 @@
     <text class="iconfont icon-dengdai-"></text>
     </view>
     <view class="item-name">
-      <text class="text-name">{{item.name}}</text>
+      <text class="text-name">{{item.localName? item.localName: item.name}}</text>
       <text class="text-rssi">Rssi: {{item.RSSI}}</text>
     </view>
   </view>

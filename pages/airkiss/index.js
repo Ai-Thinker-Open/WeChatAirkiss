@@ -166,4 +166,7 @@ Page({
 
         })
     },
+    onShareAppMessage: function() {
+      /// ignore
+    }
 });

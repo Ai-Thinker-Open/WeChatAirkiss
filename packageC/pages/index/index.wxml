@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="header">
+  <button bindtap="startOrStopScanTap"  type="primary">{{scanState}}</button>
+</view>
+
+<!--设备列表-->
+<scroll-view scroll-y="true" class="listView">
+
+  <view wx:if="{{deviceList.length > 0 }}">
+    <view wx:for="{{deviceList}}" wx:for-index="{{index}}" data-item="{{item}}" data="{{item}}" wx:key="key" bindtap="connectAction">
+      <template is="deviceItem" data-item="{{item}}" data="{{item}}">
+      </template>
+    </view>
+  </view>
+
+</scroll-view>
+
+<!--设备列表item-->
+<template name="deviceItem">
+  <view class="item" data-item="{{item}}">
+    <view style="display: flex;flex-direction: column;justify-content: center;align-items: flex-start;">
+      <text style='font-size: 16px;'>{{item.name}}</text>
+      <text style='font-size: 12px;'>{{item.mac == undefined ? item.deviceId : item.mac}}</text>
+    </view>
+    <text style='font-size: 14px;'>{{item.RSSI}}</text>
+  </view>
+</template>

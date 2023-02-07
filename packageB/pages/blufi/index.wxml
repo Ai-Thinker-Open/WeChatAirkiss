@@ -19,7 +19,7 @@
       <block wx:for="{{devicesList}}" wx:key="deviceId">
         <view wx:if="{{(m1.match(item.deviceId, macFilter) || m1.match(item.name, macFilter))&& item.name.length > 0}}" class="blufi-list-item" id="{{item.deviceId}}" bindtap="blufiConnect">
           <van-transition name="fade">
-            <van-cell title="设备名称: {{item.name}}" value="RSSI: {{item.RSSI}}" label="设备ID: {{item.deviceId}}" border="{{ false }}" />
+            <van-cell title="设备名称: {{ item.localName? item.localName: item.name }}" value="RSSI: {{item.RSSI}}" label="设备ID: {{item.deviceId}}" border="{{ false }}" />
           </van-transition>
         </view>
       </block>

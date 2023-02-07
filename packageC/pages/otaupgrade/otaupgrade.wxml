@@ -1,0 +1,17 @@
+<!--pages/otaupgrade/otaupgrade.wxml-->
+<view class="page">
+  <text style="margin: 20px 10px 10px 10px;font-size: 16px;color: black;">{{motto}}</text>
+  <button bindtap="choiceFileTap" style="margin: 5px 0 5px 0;" type="primary">选择会话文件</button>
+
+  <!--设备列表-->
+  <scroll-view scroll-y="true" class="listView">
+    <view  wx:if="{{fileList.length > 0 }}">
+      <view wx:for="{{fileList}}" wx:for-index="{{index}}" data-item="{{item}}" data="{{item}}" wx:key="key" bindtap="selectFileTap">
+        <view class="item">
+          <text style='font-size: 16px;'>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

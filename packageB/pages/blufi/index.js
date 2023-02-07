@@ -3,6 +3,8 @@ var _this = null;
 var timeout = null;
 var interval_timer = null;
 var sequenceCounet = 0;
+var newScanListLength = -1;
+var oldScanListLength = 0;
 
 const SCAN_STEP = 0;
 const INPUT_STEP = 1;
@@ -19,14 +21,14 @@ Page({
     ssid: "",
     password: "",
     steps: [{
-        text: '1.连接设备'
-      },
-      {
-        text: '2.填写WiFi'
-      },
-      {
-        text: '3.配网成功'
-      }
+      text: '1.连接设备'
+    },
+    {
+      text: '2.填写WiFi'
+    },
+    {
+      text: '3.配网成功'
+    }
     ],
     deviceId: '',
     deviceName: '',
@@ -55,8 +57,8 @@ Page({
           this.setValue("blufiloadInfo", "扫描中")
           this.setValue("blufiLoadStatus", true)
           interval_timer = setInterval(() => {
-            this.blufiUpdateList()
-          }, 1200);
+            this.blufiUpdateList();
+          }, 900);
         } else {
           this.blufiIntercalClear()
           console.log("stop scan!")
@@ -66,7 +68,6 @@ Page({
           this.setValue("blufiloadInfo", "开始扫描")
           this.setValue("blufiLoadStatus", false)
         }
-
         break;
       case INPUT_STEP:
         this.startConfig()
@@ -106,12 +107,12 @@ Page({
   blufiEventHandler: function (options) {
     switch (options.type) {
       case xBlufi.XBLUFI_TYPE.TYPE_GET_DEVICE_LISTS:
-        if (options.result)
+        if (options.result) {
           _this.setData({
             devicesListTemp: options.data
           });
+        }
         break;
-
       case xBlufi.XBLUFI_TYPE.TYPE_CONNECTED:
         console.log("连接回调：" + JSON.stringify(options))
         if (options.result) {
@@ -130,6 +131,9 @@ Page({
           })
           this.initWifi();
           sequenceCounet = 0;
+          // wx.showLoading({
+          //   title: '设备初始化中',
+          // })
         }
         break;
       case xBlufi.XBLUFI_TYPE.TYPE_GET_DEVICE_LISTS_START:
@@ -167,7 +171,7 @@ Page({
             timeout = setTimeout(() => {
               wx.closeBLEConnection({
                 deviceId: this.data.deviceId,
-                success: function (res) {},
+                success: function (res) { },
               })
               this.blufiReset()
             }, 1500)
@@ -187,8 +191,22 @@ Page({
         console.log("初始化结果：", JSON.stringify(options))
         if (options.result) {
           console.log('初始化成功')
+
         } else {
           console.log('初始化失败')
+          that.setData({
+            connected: false
+          })
+          wx.showModal({
+            title: '温馨提示',
+            content: `设备初始化失败`,
+            showCancel: false, //是否显示取消按钮
+            success: function (res) {
+              wx.redirectTo({
+                url: '../search/search'
+              })
+            }
+          })
         }
         break;
     }
@@ -196,7 +214,7 @@ Page({
   blufiReset: function () {
     wx.closeBLEConnection({
       deviceId: this.data.deviceId,
-      success: function (res) {},
+      success: function (res) { },
     })
     this.setValue("blufiloadInfo", "扫描设备")
     this.setValue("blufiLoadStatus", false)
@@ -256,7 +274,7 @@ Page({
     });
     xBlufi.listenDeviceMsgEvent(false, this.funListenDeviceMsgEvent);
   },
-  onShow: function (options) {},
+  onShow: function (options) { },
   filterChange(event) {
     this.setValue("macFilter", event.detail)
   },
@@ -298,8 +316,8 @@ Page({
       serviceId: "0000FFFF-0000-1000-8000-00805F9B34FB",
       characteristicId: "0000FF01-0000-1000-8000-00805F9B34FB",
       value: data,
-      success: function (res) {},
-      fail: function (res) {}
+      success: function (res) { },
+      fail: function (res) { }
     });
   },
   _startConfig: function () {
@@ -327,8 +345,6 @@ Page({
     //   ssid: this.data.ssid,
     //   password: this.data.password
     // })
-    // 09 00 01 08 41 49 4F 54 40 46 41 45
-    // 0D 00 02 0B 66 61 65 31 32 33 34 35 36 37 38
     let ssid_payload = [0x09, 0x00, sequenceCounet++];
     let pwd_payload = [0x0D, 0x00, sequenceCounet++];
     let connect_payload = [0x0C, 0x00, 0x02, sequenceCounet++];
@@ -359,4 +375,7 @@ Page({
   set startConfig(value) {
     this._startConfig = value;
   },
+  onShareAppMessage: function () {
+    /// ignore
+  }
 });

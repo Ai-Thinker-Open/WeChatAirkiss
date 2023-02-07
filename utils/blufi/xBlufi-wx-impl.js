@@ -7,7 +7,7 @@ let md5 = null
 let aesjs = null
 const timeOut = 20; //超时时间
 var timeId = "";
-let sequenceControl = -1;
+let sequenceControl = 0;
 let sequenceNumber = -1;
 
 let self = {
@@ -394,6 +394,7 @@ function init() {
                         })
                         wx.startBluetoothDevicesDiscovery({
                           allowDuplicatesKey: true,
+                          interval: 20,
                           success: function(res) {
                             let obj = {
                               'type': mDeviceEvent.XBLUFI_TYPE.TYPE_GET_DEVICE_LISTS_START,
@@ -477,7 +478,10 @@ function init() {
       wx.createBLEConnection({
         deviceId: options.deviceId,
         success: function(res) {
-          console.log(res)
+           wx.setBLEMTU({
+            deviceId: options.deviceId,
+            mtu:128
+           })
           self.data.deviceId = options.deviceId
           mDeviceEvent.notifyDeviceMsgEvent({
             'type': mDeviceEvent.XBLUFI_TYPE.TYPE_CONNECTED,
@@ -523,7 +527,7 @@ function init() {
   })
 
   mDeviceEvent.listenInitBleEsp32(true, function(options) {
-    sequenceControl = -1;
+    sequenceControl = 0;
     sequenceNumber = -1;
     self = null
     self = {
@@ -575,8 +579,6 @@ function init() {
                   if (list.length > 0) {
                     for (var i = 0; i < list.length; i++) {
                       var uuid = list[i].uuid;
-                      console.log("serviceId: ",serviceId)
-                      console.log("uuid: ",uuid)
                       if (uuid == self.data.characteristic_write_uuid) {
                         self.data.serviceId = serviceId;
                         self.data.uuid = uuid;
@@ -587,7 +589,7 @@ function init() {
                           characteristicId: list[1].uuid,
                           success: function(res) {
                             // let characteristicId = self.data.characteristic_write_uuid
-                            //通知设备交互方式（是否加密） start
+                            // //通知设备交互方式（是否加密） start
                             // client = util.blueDH(util.DH_P, util.DH_G, crypto);
                             // var kBytes = util.uint8ArrayToArray(client.getPublicKey());
                             // var pBytes = util.hexByInt(util.DH_P);

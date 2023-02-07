@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择升级文件",
+  "usingComponents": {
+    "hello-list": "plugin://hello-plugin/hello-component"
+  }
+}

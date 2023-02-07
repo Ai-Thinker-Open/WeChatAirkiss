@@ -90,7 +90,7 @@ function listenStartDiscoverBle(isSetListener, funtion) {
  * @param options 连接参数 {"connect":true,"deviceID":"设备id，蓝牙发现列表获取"}
  */
 function notifyConnectBle(options) {
-  // console.log('notifyConnectBle 蓝牙准备连接的deviceId --------------')
+  console.log('notifyConnectBle 蓝牙准备连接的deviceId --------------')
   mOnFire.fire(OnFireEvent.EVENT_CONNECT_DISCONNECT, options);
 }
 /**

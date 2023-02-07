@@ -165,5 +165,8 @@ Page({
     myDate.toLocaleDateString(); //获取当前日期
     var nowTime = add_10(myDate.getHours()) + '时' + add_10(myDate.getMinutes()) + '分' + add_10(myDate.getSeconds()) + '秒 收到：';
     return nowTime;
+  },
+  onShareAppMessage: function () {
+    /// ignore
   }
 })

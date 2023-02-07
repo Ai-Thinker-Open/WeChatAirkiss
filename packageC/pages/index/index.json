@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索设备",
+  "usingComponents": {
+    "hello-list": "plugin://hello-plugin/hello-component"
+  }
+}

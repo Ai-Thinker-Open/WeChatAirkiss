@@ -32,7 +32,7 @@ Page({
         wx.startBluetoothDevicesDiscovery({
           success: function (res) {
             wx.navigateTo({
-                url: '../../packageB/pages/blufi/index',
+              url: '../../packageB/pages/blufi/index',
             })
           }
         })
@@ -40,6 +40,12 @@ Page({
       fail(res) {
         util.showToast("使用前请打开蓝牙和位置信息服务");
       }
+    })
+  },
+  bindViewPbOTA: function () {
+    wx.vibrateShort()
+    wx.navigateTo({
+      url: '../../packageC/pages/index/index',
     })
   },
   //事件处理函数
@@ -61,5 +67,8 @@ Page({
         //app.data.system = res.platform
       }
     })
+  },
+  onShareAppMessage: function () {
+    /// ignore
   }
 })

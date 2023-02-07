@@ -1,0 +1,26 @@
+/* pages/otaupgrade/otaupgrade.wxss */
+
+.page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.listView {
+  height: 80%;
+  width: 100%;
+}
+
+.item {
+  margin: 2rpx 3% 2rpx 3%;
+  padding: 0 2% 0 2%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7fd87f;
+}

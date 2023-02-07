@@ -477,5 +477,9 @@ Page({
    */
   onReachBottom() {
     
+  },
+
+  onShareAppMessage: function() {
+    /// ignore
   }
 })

@@ -1,0 +1,29 @@
+/**index.wxss**/
+page{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.listView {
+  height: 90%;
+  width: 100%;
+}
+
+.item {
+  margin: 2rpx 3% 2rpx 3%;
+  padding: 0 2% 0 2%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7fd87f;
+}

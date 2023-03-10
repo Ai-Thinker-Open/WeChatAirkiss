@@ -259,6 +259,20 @@ Page({
       clearInterval(interval_timer)
     }
   },
+  encodeUtf8: function(text) {
+    const code = encodeURIComponent(text);
+    const bytes = [];
+    for (var i = 0; i < code.length; i++) {
+        const c = code.charAt(i);
+        if (c === '%') {
+            const hex = code.charAt(i + 1) + code.charAt(i + 2);
+            const hexVal = parseInt(hex, 16);
+            bytes.push(hexVal);
+            i += 2;
+        } else bytes.push(c.charCodeAt(0));
+    }
+    return bytes;
+  },
   onLoad: function () {
     _this = this;
     xBlufi.initXBlufi(1);
@@ -345,18 +359,30 @@ Page({
     //   ssid: this.data.ssid,
     //   password: this.data.password
     // })
+
     let ssid_payload = [0x09, 0x00, sequenceCounet++];
     let pwd_payload = [0x0D, 0x00, sequenceCounet++];
     let connect_payload = [0x0C, 0x00, 0x02, sequenceCounet++];
 
-    ssid_payload.push(this.data.ssid.length);
-    for (var i = 0; i < this.data.ssid.length; i++) {
-      ssid_payload.push(this.data.ssid[i].charCodeAt());
+    var temp_ssid_payload = []
+    for(var i = 0; i < this.data.ssid.length; i++){
+      var ssid_utf8 = this.encodeUtf8(this.data.ssid[i])
+      console.log(ssid_utf8)
+      temp_ssid_payload.push(...ssid_utf8);
     }
-    pwd_payload.push(this.data.password.length);
-    for (var i = 0; i < this.data.password.length; i++) {
-      pwd_payload.push(this.data.password[i].charCodeAt());
+
+    ssid_payload.push(temp_ssid_payload.length);
+    ssid_payload.push(...temp_ssid_payload);
+    var temp_pwd_payload = []
+    for(var i = 0; i < this.data.password.length; i++){
+      var pwd_utf8 = this.encodeUtf8(this.data.password[i])
+      console.log(pwd_utf8)
+      temp_pwd_payload.push(...pwd_utf8);
     }
+    pwd_payload.push(temp_pwd_payload.length);
+    pwd_payload.push(...temp_pwd_payload);
+
+
     var ssidArray = new Uint8Array(ssid_payload);
     var passwordArray = new Uint8Array(pwd_payload);
     var connectCMD = new Uint8Array(connect_payload);

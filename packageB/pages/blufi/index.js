@@ -278,6 +278,14 @@ Page({
     xBlufi.initXBlufi(1);
     console.log("xBlufi", xBlufi.XMQTT_SYSTEM)
     xBlufi.listenDeviceMsgEvent(true, this.blufiEventHandler);
+    //clear status
+    this.blufiIntercalClear()
+    xBlufi.notifyStartDiscoverBle({
+      'isStart': false
+    })
+    _this.setData({
+      devicesList: []
+    });
   },
   onUnload: function () {
     _this = this
